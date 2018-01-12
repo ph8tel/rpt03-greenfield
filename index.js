@@ -1,6 +1,8 @@
 const express = require('express')
+const users = require('./routes/users');
 const path = require('path')
-const db = require('./database/index.js')
+// const db = require('./database/index.js')
+const bodyParser = require ('body-parser');
 const PORT = process.env.PORT || 5000
 //testing adding from heroku app
 //HI!
@@ -17,6 +19,7 @@ var app = new express();
 // Check out web RTC
 //express()
 //set the static files
+  app.use(bodyParser.json())
   app.use(express.static(path.join(__dirname, 'public')))
 //say where the views are
   app.set('views', path.join(__dirname, 'views'))
@@ -24,9 +27,11 @@ var app = new express();
   app.set('view engine', 'ejs')
 //root route
   app.get('/', (req, res) => res.render('pages/index'))
+  app.use('/API', users); //look ma I used a semicolon!
   app.listen(PORT, function() {
     log.info(`Listening on  ${ PORT }`)
   })
+
 //test
   //route for webcam
   // app.get('/cam', (req, res) =>  res.render('../public/myVideo.html') )
