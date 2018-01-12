@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const db = require('./database/index.js')
 const PORT = process.env.PORT || 5000
 //testing adding from heroku app
 //HI!
