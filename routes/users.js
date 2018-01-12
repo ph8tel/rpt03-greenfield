@@ -14,6 +14,18 @@ router.get('/users', function(req, res, next){
 	//async deathzone, anything palced here is undefined
 })
 
+router.post('/users', function(req, res, next){
+	console.log("POST REQUEST BODY IS ", req.body)
+	// db.save({}, function(err, users){
+	// 	if(err){
+	// 		console.log('THERE WAS AN ERROR ', err)
+	// 		return;
+	// 	}
+	// 	res.json(users);
+	// })
+	//async deathzone, anything palced here is undefined
+	res.send('end')
+})
 /*
 localhost:5000/users (GET) => fetches the entire database
 localhost:5000/users/4 (GET) => gets the user with an _id of 4

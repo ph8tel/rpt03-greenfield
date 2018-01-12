@@ -19,6 +19,7 @@ var app = new express();
 // Check out web RTC
 //express()
 //set the static files
+  app.use(bodyParser.urlencoded({ extended: false }))
   app.use(bodyParser.json())
   app.use(express.static(path.join(__dirname, 'public')))
 //say where the views are
