@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const db = require('./database/index.js')
 const PORT = process.env.PORT || 5000
 //testing adding from heroku app
 //HI!
@@ -7,6 +8,7 @@ const PORT = process.env.PORT || 5000
 // https://www.youtube.com/watch?v=OPxeCiy0RdY
 var io = require('socket.io')(http)
 //anyone seeing this?
+//solid comment
 var http = require('http')
 
 var Log = require('log')
