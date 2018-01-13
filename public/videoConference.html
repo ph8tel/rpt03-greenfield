@@ -8,6 +8,44 @@
   <script type="text/javascript" src="https://api.bistri.com/bistri.conference.min.js"></script>
   <script type="text/javascript" src="/js/webcam.js"></script>
 
+  <style type="text/css">
+  
+  .nav ul {
+    list-style: none;
+    background-color: #444;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav li {
+    border-bottom: 1px solid #888;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+  }
+
+  .nav a:hover {
+    background-color: #005f5f;
+  }
+
+  .nav a.active {
+    background-color: #fff;
+    color: #888;
+    cursor: default;
+  }
+
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+  
+  
+  </style>
 
 </head>
 <body>
@@ -33,11 +71,16 @@
         </div>
     </div>
 
-<div>
-  <h2>TOOLS:</h2>
+<div class="nav">
+  <ul>
+    <li id="showFloo"><a href="#">Floobits</a></li>
+    <li id="showLearn"><a href="#">Learn</a></li>
+    <li id="showRepl"><a href="#">REPL</a></li>
+  </ul>
+  <!-- <h2>TOOLS:</h2>
   <button id="showFloo">Floobits</button>
   <button id="showLearn">Learn</button>
-  <button id="showRepl">Repl</button>
+  <button id="showRepl">Repl</button> -->
 </div>
 <div>
 
