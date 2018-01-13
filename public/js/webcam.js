@@ -22,8 +22,8 @@ onBistriConferenceReady = function () {
     // initialize API client with application keys
     // these are my personal keys
     bc.init( {
-        "appId": "ce62f37f",
-        "appKey": "da9d93e2c19414deb35baca093cb7456",
+        "appId": "93c2645f",
+        "appKey": "32d45c8872d903315658d03e5beb011e",
         "debug": true
     } );
 
