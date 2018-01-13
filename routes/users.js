@@ -63,11 +63,6 @@ router.delete('/users/:id', function(req, res, next){
 		res.json('1')
 	})
 })
-/*
-localhost:5000/users (GET) => fetches the entire database
-localhost:5000/users/4 (GET) => gets the user with an _id of 4
-            (POST) => adds a user object
-          /4  (DELETE) => removes a user with an _id of 4
-*/
+
 
 module.exports = router;
