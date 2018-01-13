@@ -5,9 +5,10 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="login.js"></script>
-  <title>Get Ready for Harbour Power!</title>
+  <title>Create User!</title>
 </head>
 <body>
+  <h1>Create Yourself</h1>
   <form action="login.js" id="login">
     <input type="text" name="userName">Name</input>
     <input type="text" name="cohort" value="">Cohort</input>
@@ -21,31 +22,14 @@
     $(form).submit(function(event) {
       event.preventDefault();
       console.log('event is ', event);
-      var formData = $(form).serialize().split('=')[1].split('&')[0].replace('%20', ' ')
-      //Deal with it!
+      var formData = $(form).serialize()
       console.log('form data is ', formData)
       $.ajax({
-         url: 'api/users/' + formData,
-         type: 'GET',
-         success: function(data) {
-           console.log('data in success is ', data);
-           if (data !== null) {
-             window.location.replace('./videoConference.html');
-           } else {
-             window.location.replace('./createUser.html');
-           }
-
-         },
-         error: function() {
-           console.log('error in ajax ', err)
-
-         }
-       })
-
-
-
-
-
+        type: 'POST',
+        url: 'api/users',
+        data: formData
+      })
+      window.location.replace('./videoConference.html');
     })
     // $('#login').submit(function(event, data) {
     //   event.preventDefault();

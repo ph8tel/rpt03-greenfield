@@ -14,11 +14,11 @@ router.get('/users', function(req, res, next){
 	//async deathzone, anything palced here is undefined
 })
 
-router.get('/users/:id', function(req, res, next){
-	db.findOne({_id: req.params.id}, function(err, users){
+router.get('/users/:userName', function(req, res, next){
+	db.findOne({userName: req.params.userName}, function(err, users){
 		if(err){
 			console.log('THERE WAS AN ERROR ', err)
-			return;
+			res.end()
 		}
 		res.json(users);
 	})

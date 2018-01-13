@@ -7,7 +7,6 @@ const userSchema = new Schema({
   userName: String,
   cohort: String,
   teamName: String,
-  sprintName: String
 })
 
 
