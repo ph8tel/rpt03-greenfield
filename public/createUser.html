@@ -5,9 +5,10 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="login.js"></script>
-  <title>Get Ready for Harbour Power!</title>
+  <title>Create User!</title>
 </head>
 <body>
+  <h1>Create Yourself</h1>
   <form action="login.js" id="login">
     <input type="text" name="userName">Name</input>
     <input type="text" name="cohort" value="">Cohort</input>
@@ -27,7 +28,7 @@
         type: 'POST',
         url: 'api/users',
         data: formData
-      } (function(err, success) {}))
+      })
       window.location.replace('./videoConference.html');
     })
     // $('#login').submit(function(event, data) {
