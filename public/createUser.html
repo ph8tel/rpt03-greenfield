@@ -21,29 +21,14 @@
     $(form).submit(function(event) {
       event.preventDefault();
       console.log('event is ', event);
-      var formData = $(form).serialize().split('=')[1].split('&')[0].replace('%20', ' ')
-      //Deal with it!
+      var formData = $(form).serialize()
       console.log('form data is ', formData)
       $.ajax({
-         url: 'api/users/' + formData,
-         type: 'GET',
-         success: function(data) {
-           console.log('data in success is ', data);
-           if (data !== null) {
-             window.location.replace('./videoConference.html');
-           }
-
-         },
-         error: function() {
-           console.log('error in ajax ', err)
-
-         }
-       })
-
-
-
-
-
+        type: 'POST',
+        url: 'api/users',
+        data: formData
+      } (function(err, success) {}))
+      window.location.replace('./videoConference.html');
     })
     // $('#login').submit(function(event, data) {
     //   event.preventDefault();
