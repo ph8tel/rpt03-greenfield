@@ -35,7 +35,7 @@
     background-color: #2b99c5;
   }
 
-  .nav a.active {
+  .nav a:active {
     background-color: #fff;
     color: #888;
     cursor: default;
@@ -45,7 +45,37 @@
     display: inline-block;
     margin-right: -4px;
   }
+
+  .pane {
+    list-style: none;
+    background-color: #444;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pane h1 {
+    color: #ffffff;
+  }
+
+  #pane_0 {
+    color: #ffffff;
+  }
+
+  .pane li {
+    display: inline-block;
+    margin-right: -4px;
+  }
   
+  .pane li:active {
+    background-color: #f12929;
+    color: #f3f3f3;
+    cursor: default;
+  }
+  .pane li {
+    display: inline-block;
+    margin-right: -4px
+  }
   
   </style>
 
@@ -64,12 +94,14 @@
 
     <div class="pane" id="pane_2" style="display: none">
         <div id="video_container"></div>
-           <input type="button" value="Leave" id="quit" class="btn btn-danger btn-default btn-block">
-           <input type="button" value="unmute" id="unmute" class="btn btn-danger btn-default btn-block">
-           <input type="button" value="mute" id="mute" class="btn btn-danger btn-default btn-block">
-           <input type="button" value="muteAll" id="muteAll" class="btn btn-danger btn-default btn-block"  >
-           <input type="button" value="muteVideo" id="muteVideo" class="btn btn-danger btn-default btn-block"  >
-           <input type="button" value="unmuteVideo" id="unmuteVideo" class="btn btn-danger btn-default btn-block"  >
+          <ul>
+           <li><input type="button" value="Leave" id="quit" class="btn btn-danger btn-default btn-block"></li>
+           <li><input type="button" value="Unmute" id="unmute" class="btn btn-danger btn-default btn-block"></li>
+           <li><input type="button" value="Mute" id="mute" class="btn btn-danger btn-default btn-block"></li>
+           <li><input type="button" value="Mute Everyone" id="muteAll" class="btn btn-danger btn-default btn-block"  ></li>
+           <li><input type="button" value="Disable Video" id="muteVideo" class="btn btn-danger btn-default btn-block"  ></li>
+           <li><input type="button" value="Enable Video" id="unmuteVideo" class="btn btn-danger btn-default btn-block"  ></li>
+          <ul>
         </div>
     </div>
 

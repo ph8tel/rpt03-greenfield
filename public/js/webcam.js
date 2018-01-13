@@ -181,10 +181,12 @@ function unmuteVideo(){
 //when button "Mute" has been clicked
 function muteMe() {
     bc.muteMicrophone( {status: true} );
+    console.log(`Muting enabled`)
 }
 //ehrn button "Unmute" has been clicked
 function unmuteMe() {
   bc.muteMicrophone( false );
+  console.log(`Muting disabled`);
 }
 // when button "Quit Conference Room" has been clicked
 function quitConference(){
