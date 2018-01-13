@@ -6,15 +6,42 @@
   crossorigin="anonymous"></script>
   <script src="login.js"></script>
   <title>Create User!</title>
+  <style type="text/css">
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      margin: 20px 200px 20px 102px;
+      border-bottom-style: groove;
+    }
+  </style>
+
 </head>
 <body>
-  <h1>Create Yourself</h1>
-  <form action="login.js" id="login">
-    <input type="text" name="userName">Name</input>
-    <input type="text" name="cohort" value="">Cohort</input>
-    <input type="text" name="teamName" value="">Team Name</input>
-    <button>Submit</button>
-  </form>
+  <div class="wrapper">
+    <div>
+      <h1>Create Yourself</h1>
+      <form action="login.js" id="login">
+        <!-- <span>Name</span> -->
+        <input type="text" name="userName" placeholder="Name" />
+        <span>Cohort</span>
+         <select name="cohort" >
+          <option value="rpt2">rpt02</option>
+          <option value="rpt3">rpt03</option>
+          <option value="rpt4">rpt04</option>
+          <option value="rpt5">rpt05</option>
+        </select>
+        <!-- <input type="text" name="cohort" /> -->
+        <span>Team Name</span>
+        <input type="text" name="teamName" />
+
+
+        <button>Submit</button>
+      </form>
+    </div>
+    <div>
+      <img src="download.png" width="100%">
+    </div>
+  </div>
   <script>$(function() {
     var form = $('#login');
     var formMessages = $('#form.messages');
