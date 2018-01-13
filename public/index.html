@@ -1,53 +1,72 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="login.js"></script>
+  <title>Get Ready for Harbour Power!</title>
+  <link rel="stylesheet" src="stylesheets/main.css"></link>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <title>Greenfield</title>
-  <script type="text/javascript" src="https://api.bistri.com/bistri.conference.min.js"></script>
-  <script type="text/javascript" src="/js/webcam.js"></script>
 
+<style type="text/css">
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 20px 200px 20px 102px;
+    border-bottom-style: groove;
+  }
+
+
+</style>
 
 </head>
 <body>
-      <div class="pane" id="pane_0">
-        PLEASE WAIT WHILE WE CONNECT TO YOUR CAMERA
-    </div>
-
   <div class="wrapper">
-
-    <div class="pane" id="pane_1" style="display: none">
-      <h1> enter your team name here </h1>
-        <input type="text" placeholder="Enter Team Name" id="room_field" class="form-control">
-        <br>
-        <input type="button" value="Join your team" id="join" class="btn btn-info btn-default btn-block">
-<!--                 <input type="button" value="unmute" id="unmute" class="btn btn-info btn-default btn-block">
-                  <input type="button" value="mute" id="mute" class="btn btn-info btn-default btn-block">
-                  <input type="button" value="muteAll" id="muteAll" >
- -->
-
+    <div>
+      <form id="login">
+        <span>Please log in</span>
+        <input type="text" name="userName" placeholder="Enter yout name"/><br />
+        <button>Submit</button>
+      </form>
     </div>
-
-    <div class="pane" id="pane_2" style="display: none">
-        <div id="video_container"></div>
-           <input type="button" value="Leave" id="quit" class="btn btn-danger btn-default btn-block">
-           <input type="button" value="unmute" id="unmute" class="btn btn-danger btn-default btn-block">
-           <input type="button" value="mute" id="mute" class="btn btn-danger btn-default btn-block">
-           <input type="button" value="muteAll" id="muteAll" class="btn btn-danger btn-default btn-block"  >
-           <input type="button" value="muteVideo" id="muteVideo" class="btn btn-danger btn-default btn-block"  >
-           <input type="button" value="unmuteVideo" id="unmuteVideo" class="btn btn-danger btn-default btn-block"  >
-        </div>
+    <div>
+      <img src="download.png" width="100%">
     </div>
+  </div>
 
-<div>
-<iframe src="https://floobits.com/HackReactor/AAJS/file/index.js:1" width="100%" height="700px"></iframe>
-</div>
-<div>
-<iframe src="https://learn.makerpass.com/groups/rpt03/courses/reactorcore/course.greenfield" width="100%" height="100%"></iframe>
-</div>
-<div>
-<iframe src="https://repl.it/languages/javascript" height="100%" width="100%"></iframe>
-</div>
+  <script>$(function() {
+    var form = $('#login');
+    var formMessages = $('#form.messages');
+    //console.log('form messages looks like ', formMessages);
+    $(form).submit(function(event) {
+      event.preventDefault();
+      console.log('event is ', event);
+      var formData = $(form).serialize().split('=')[1].split('&')[0].replace('%20', ' ')
+      //Deal with it!
+      console.log('form data is ', formData)
+      $.ajax({
+         url: 'api/users/' + formData,
+         type: 'GET',
+         success: function(data) {
+           console.log('data in success is ', data);
+           if (data !== null) {
+             window.location.replace('./videoConference.html');
+           } else {
+             window.location.replace('./createUser.html');
+           }
+         },
+         error: function() {
+           console.log('error in ajax ', err)
+         }
+       })
+    })
+    // $('#login').submit(function(event, data) {
+    //   event.preventDefault();
+    //   console.log('event is ', event);
+    //   console.log('data is ', data);
+    // })
+  })</script>
 </body>
 </html>
