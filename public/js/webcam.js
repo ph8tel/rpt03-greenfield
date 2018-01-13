@@ -115,10 +115,7 @@ onBistriConferenceReady = function () {
         }
     } );
 
-    //mute button
-      //ex frm docs: BistriConference.muteMicrophone( true );
-
-
+// buttons
     // bind function "joinConference" to button "Join Conference Room"
     q( "#join" ).addEventListener( "click", joinConference );
 
@@ -128,13 +125,16 @@ onBistriConferenceReady = function () {
     //bind function "muteMe" to button "Mute"
     q( "#mute" ).addEventListener( "click", muteMe );
 
-        //bind function "unmuteMe" to button "Unmute"
+    //bind function "unmuteMe" to button "Unmute"
     q( "#unmute" ).addEventListener( "click", unmuteMe );
+
     //bind function "muteAll" to button "muteAll"
     q( "#muteAll" ).addEventListener( "click", muteAll );
+
     //bind function "muteVideo" to button "muteVideo"
     q( "#muteVideo" ).addEventListener( "click", muteVideo );
-        //bind function "muteVideo" to button "muteVideo"
+
+    //bind function "muteVideo" to button "muteVideo"
     q( "#unmuteVideo" ).addEventListener( "click", unmuteVideo );
 
     // open a new session on the server
@@ -167,10 +167,7 @@ function muteAll() {
     console.log(localStream, 'is locals');
         bc.muteSound(localStream, true);
     console.log(`is audio muted? ${bc.isMicrophoneMuted()}`)
-
-
 }
-
 //turn off video
 function muteVideo(){
     bc.muteVideo( localStream, true );
@@ -181,28 +178,17 @@ function unmuteVideo(){
     bc.muteVideo( localStream, false );
     console.log(`video on`)
 }
-
 //when button "Mute" has been clicked
 function muteMe() {
-    console.log(`is video muted? ${bc.isVideoMuted()}`)
-
-    console.log("muted")
-  bc.muteMicrophone( {status: true} );
-    console.log(`is video muted? ${bc.isVideoMuted()}`)
-
+    bc.muteMicrophone( {status: true} );
 }
 //ehrn button "Unmute" has been clicked
 function unmuteMe() {
-    console.log(`is video muted? ${bc.isVideoMuted()}`)
-
-    console.log("unmuted")
-
   bc.muteMicrophone( false );
 }
 // when button "Quit Conference Room" has been clicked
 function quitConference(){
     // quit the current conference room
-    console.info(` leaving with ${this}`)
     bc.quitRoom( room );
 }
 

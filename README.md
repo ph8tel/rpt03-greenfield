@@ -1,16 +1,16 @@
-# node-js-getting-started
+#POWERFUL HARBOR
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A video pairing app for Hack Reactor students using[Node, Express, Mongo ](http://expressjs.com/)(http://nodejs.com/).
 
 This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
 ## Running Locally
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
+Make sure you have nodemon installed globally along with  [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/)
 
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+```CLONE
+$ git clone https://git.heroku.com/powerful-harbor.git # to clone your own fork
+$ cd powerful-harbor
 $ npm install
 $ npm start
 ```
