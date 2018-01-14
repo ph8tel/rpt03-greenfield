@@ -9,7 +9,7 @@ var localStream;
 
 // when Bistri API client is ready, function
 // "onBistriConferenceReady" is invoked
-onBistriConferenceReady = function () {
+onBistriConferenceReady = () => {
 
     // test if the browser is WebRTC compatible
     if ( !bc.isCompatible() ) {
@@ -142,7 +142,7 @@ onBistriConferenceReady = function () {
 }
 
 // when button "Join Conference Room" has been clicked
-function joinConference(){
+joinConference = ()=> {
     var roomToJoin = q( "#room_field" ).value;
     // if "Conference Name" field is not empty ...
     if( roomToJoin ){
@@ -157,7 +157,7 @@ function joinConference(){
 
 //mute button lgic
 //when button "muteAll" has been clicked
-function muteAll() {
+muteAll = () => {
     var context = this
 
     console.log(`is audio muted? ${bc.isMicrophoneMuted()}`)
@@ -169,32 +169,32 @@ function muteAll() {
     console.log(`is audio muted? ${bc.isMicrophoneMuted()}`)
 }
 //turn off video
-function muteVideo(){
+muteVideo = () => {
     bc.muteVideo( localStream, true );
     console.log(`video off`)
 }
 //turn on video
-function unmuteVideo(){
+unmuteVideo = () => {
     bc.muteVideo( localStream, false );
     console.log(`video on`)
 }
 //when button "Mute" has been clicked
-function muteMe() {
+muteMe = () => {
     bc.muteMicrophone( {status: true} );
     console.log(`Muting enabled`)
 }
 //ehrn button "Unmute" has been clicked
-function unmuteMe() {
+unmuteMe = () => {
   bc.muteMicrophone( false );
   console.log(`Muting disabled`);
 }
 // when button "Quit Conference Room" has been clicked
-function quitConference(){
+quitConference = ()=> {
     // quit the current conference room
     bc.quitRoom( room );
 }
 
-function showPanel( id ){
+showPanel = ( id ) => {
     var panes = document.querySelectorAll( ".pane" );
     // for all nodes matching the query ".pane"
     for( var i=0, max=panes.length; i<max; i++ ){
@@ -203,7 +203,7 @@ function showPanel( id ){
     };
 }
 
-function q( query ){
+q = ( query ) => {
     // return the DOM node matching the query
     return document.querySelector( query );
 }
