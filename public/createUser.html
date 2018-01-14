@@ -41,7 +41,7 @@
   <script>$(function() {
     var form = $('#login');
     var formMessages = $('#form.messages');
-    $(form).submit(function(event) {
+    $(form).submit( (event) => {
       event.preventDefault();
       console.log('event is ', event);
       var formData = $(form).serialize()
