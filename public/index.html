@@ -24,7 +24,7 @@
     font-size: 2em;
   }
 
-  
+
 
 </style>
 
@@ -46,14 +46,14 @@
   <script>$(function() {
     var form = $('#login');
     var formMessages = $('#form.messages');
-    $(form).submit(function(event) {
+    $(form).submit( (event) => {
       event.preventDefault();
       var formData = $(form).serialize().split('=')[1].split('&')[0].replace('%20', ' ')
       //Deal with it!
       $.ajax({
          url: 'api/users/' + formData,
          type: 'GET',
-         success: function(data) {
+         success: (data) => {
            console.log('data in success is ', data);
            if (data !== null) {
              window.location.replace('./videoConference.html');
@@ -61,7 +61,7 @@
              window.location.replace('./createUser.html');
            }
          },
-         error: function() {
+         error: () => {
            console.log('error in ajax ', err)
          }
        })
